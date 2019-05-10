@@ -3,10 +3,11 @@
 
 Этот репозиторий собран благодаря Alter0ne и его сборке OpenWRT для нашего процессора.
 
-## Внимание ! Этот репозиторий предназначается для роутеров с процессорами от 
-## Realtek  rtl8196e с прошивкой OpenWRT 14.07
-## За приченный вред вашему роутеру мы не нисём ответсвенности. 
-## Вы знали, что ставили мы вас уведомили.
+## Внимание ! 
+>Этот репозиторий предназначается для роутеров с процессорами от 
+> Realtek  rtl8196e с прошивкой OpenWRT 14.07
+> За приченный вред вашему роутеру мы не нисём ответсвенности. 
+> Вы знали, что ставили мы вас уведомили.
 
 ### Инструкция
 1. Войдите в WEB-интерфейс вашего роутера
@@ -23,7 +24,7 @@
 >src/gz barrier_breaker_luci http://downloads.openwrt.org/barrier_breaker/14.07/realtek/rtl8196e/packages/luci
 >src/gz barrier_breaker_management http://downloads.openwrt.org/barrier_breaker/14.07/realtek/rtl8196e/packages/management
 
->Этим
+#Этим
 
 >dest root /
 >dest ram /tmp
