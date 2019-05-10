@@ -1,37 +1,51 @@
-## Welcome to GitHub Pages
+# OpenWRT Repo for rtl8196e
+Привет, чтобы использовать этот репозиторий с пакетами от [Alter0ne]https://github.com/Alter0ne/rtl8196e/) вам следует ознакомиться с этой инструкцией.
 
-You can use the [editor on GitHub](https://github.com/wrtrtl/wrtrtl.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+Этот репозиторий собран благодаря Alter0ne и его сборке OpenWRT для нашего процессора.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Внимание ! Этот репозиторий предназначается для роутеров с процессорами от 
+## Realtek  rtl8196e с прошивкой OpenWRT 14.07
+## За приченный вред вашему роутеру мы не нисём ответсвенности. 
+## Вы знали, что ставили мы вас уведомили.
 
-### Markdown
+### Инструкция
+1. Войдите в WEB-интерфейс вашего роутера
+2. Перейдите "Система"-"Програмное обеспечение"-"Конфигурация"
+3. Замените это
+  *
+  dest root /
+dest ram /tmp
+lists_dir ext /var/opkg-lists
+option overlay_root /overlay
+src/gz barrier_breaker_base http://downloads.openwrt.org/barrier_breaker/14.07/realtek/rtl8196e/packages/base
+src/gz barrier_breaker_telephony http://downloads.openwrt.org/barrier_breaker/14.07/realtek/rtl8196e/packages/telephony
+src/gz barrier_breaker_packages http://downloads.openwrt.org/barrier_breaker/14.07/realtek/rtl8196e/packages/packages
+src/gz barrier_breaker_routing http://downloads.openwrt.org/barrier_breaker/14.07/realtek/rtl8196e/packages/routing
+src/gz barrier_breaker_luci http://downloads.openwrt.org/barrier_breaker/14.07/realtek/rtl8196e/packages/luci
+src/gz barrier_breaker_management http://downloads.openwrt.org/barrier_breaker/14.07/realtek/rtl8196e/packages/management
+  *
+  Этим
+  *
+  dest root /
+dest ram /tmp
+lists_dir ext /var/opkg-lists
+option overlay_root /overlay
+src/gz barrier_breaker_base https://wrtrtl.github.io/packages/base
+src/gz barrier_breaker_telephony https://wrtrtl.github.io/packages/telephony
+src/gz barrier_breaker_packages https://wrtrtl.github.io/packages/packages
+src/gz barrier_breaker_routing https://wrtrtl.github.io/packages/routing
+src/gz barrier_breaker_luci https://wrtrtl.github.io/packages/luci
+src/gz barrier_breaker_management https://wrtrtl.github.io/packages/management
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+  *
+4. Жмем Применить
+5. Зайдите в SSH консоль
+6. Набирите команду *opkg update*
 
-```markdown
-Syntax highlighted code block
+### Если вам нужны пакеты из oldpackages
+Добавте к этому списку этот репозиторий
+*src/gz barrier_breaker_oldpackages https://wrtrtl.github.io/packages/oldpackages*
 
-# Header 1
-## Header 2
-### Header 3
+### Проблемы, остались вопросы
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/wrtrtl/wrtrtl.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Если у вас остались вопросы, то пишите на почту pnsrc@yandex.ru
