@@ -25,7 +25,7 @@ src/gz barrier_breaker_routing http://downloads.openwrt.org/barrier_breaker/14.0
 src/gz barrier_breaker_luci http://downloads.openwrt.org/barrier_breaker/14.07/realtek/rtl8196e/packages/luci
 src/gz barrier_breaker_management http://downloads.openwrt.org/barrier_breaker/14.07/realtek/rtl8196e/packages/management
 ```
-#Этим
+# Этим
 ```
 dest root /
 dest ram /tmp
